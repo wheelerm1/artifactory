@@ -11,9 +11,9 @@ except ImportError:
 with open("version.txt") as file:
     __version__ = file.readline().strip()
 
-# check that version is correct (X.X.X or X.X.X.devXXX or X.X.X.alphaX), eg 0.10.0.dev0
+# check that version is correct (X.X.X or X.X.X.devX or X.X.X.alphaX or X.X.XrcX), eg 0.10.0.dev0
 assert re.match(
-    r"^\d+\.\d+\.\d+$|^\d+\.\d+\.\d+\.dev\d+$|^\d+\.\d+\.\d+rc\.d+$", __version__
+    r"^\d+\.\d+\.\d+$|^\d+\.\d+\.\d+\.dev\d+$|^\d+\.\d+\.\d+\.alpha\d+$|^\d+\.\d+\.\d+rc\d+$", __version__
 )
 
 
