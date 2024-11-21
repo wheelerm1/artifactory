@@ -13,7 +13,7 @@ with open("version.txt") as file:
 
 # check that version is correct (X.X.X or X.X.X.devXXX or X.X.X.alphaX), eg 0.10.0.dev0
 assert re.match(
-    r"^\d+\.\d+\.\d+$|^\d+\.\d+\.\d+\.dev\d+$|^\d+\.\d+\.\d+\.alpha\.d+$", __version__
+    r"^\d+\.\d+\.\d+$|^\d+\.\d+\.\d+\.dev\d+$|^\d+\.\d+\.\d+rc\.d+$", __version__
 )
 
 
@@ -22,6 +22,8 @@ if "alpha" in __version__:
     dev_status = "3 - Alpha"
 elif "dev" in __version__:
     dev_status = "4 - Beta"
+elif "rc" in __version__:
+    dev_status = "4 - Release Candidate"
 else:
     dev_status = "5 - Production/Stable"
 
